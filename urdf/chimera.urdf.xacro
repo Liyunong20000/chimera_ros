@@ -4,23 +4,26 @@
 
   <xacro:arg name="fixed_grapple" default="true" />
 
-  <xacro:include filename="$(find dragon)/urdf/dragon_common.xacro" />
-  <xacro:include filename="$(find dragon)/urdf/dragon_link.urdf.xacro" />
+  <!-- <xacro:include filename="$(find dragon)/urdf/dragon_common.xacro" /> -->
+  <!-- <xacro:include filename="$(find dragon)/urdf/dragon_link.urdf.xacro" /> -->
 
   <!-- spot -->
   <xacro:include filename="$(find chimera_ros)/urdf/spot.urdf.xacro" />
 
   <!-- free arm -->
-  <xacro:include filename="$(find free_arm_robot)/robots/quad.urdf.xacro" />
+  <!-- <xacro:include filename="$(find free_arm_robot)/robots/quad.urdf.xacro" /> -->
+  
+  <xacro:include filename="$(find dragon)/robots/quad/euclid_201709.urdf.xacro" />
 
 
   <!-- the following joint should be configurable-->
   <xacro:if value="$(arg fixed_grapple)">
     <joint name="grapple_attachment_joint" type="fixed">
-      <origin xyz="0.0 0.0 0.224" rpy="${pi} ${pi/2} 0" />
+      <!-- <origin xyz="0.0 0.0 0.224" rpy="${pi} ${pi/2} 0" /> -->
+      <origin xyz="0.0 0.0 0.0" rpy="${0} ${-pi/2} 0" />
       <axis xyz="1 0 0" />
       <parent link="base_fixture" />
-      <child link="link1" />
+      <child link="root" />
     </joint>
   </xacro:if>
 
