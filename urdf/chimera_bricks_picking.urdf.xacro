@@ -32,12 +32,10 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-	<mesh filename="package://chimera_ros/meshes/brick_wall_low.dae" scale="1 1 1" />
+	<mesh filename="package://chimera_ros/meshes/brick_picking.dae" scale="1 1 1" />
       </geometry>
     </visual>
   </link>
-
-
 
 
   <joint name="end_effector_fixed_joint" type="fixed">
