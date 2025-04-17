@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <launch>
 
-  <!-- 1:picking 2:docking 3:detaching -->
+  <!-- 1:picking 2:docking 3:detaching 4:checking-->
   <arg name="urdf_file" default="picking"/>
   ###########  Robot Model  ###########
   <include file="$(find aerial_robot_model)/launch/aerial_robot_model.launch" >
     <arg name="headless" value="false" />
     <arg name="robot_model" value="$(find chimera_ros)/urdf/chimera_bricks_$(arg urdf_file).urdf.xacro"/>
-    <arg name="rviz_config" value="$(find chimera_ros)/config/chimera.rviz" />
+    <arg name="rviz_config" value="$(find chimera_ros)/config/chimera_$(arg urdf_file).rviz" />
     <arg name="rviz_init_pose" value="$(find chimera_ros)/config/RvizInit.yaml" />
     <arg name="robot_ns" value="chimera" />
   </include >
